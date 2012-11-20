@@ -1,48 +1,83 @@
 ﻿body {
+    
 }
 
 .book {
+    
+    /*
     background-color: #808080;
     color:#b6ff00;
     padding: 10px;
-    margin:7px;
+    margin:0px;
     margin-right:20px;
     font-size:28px;
+    border-bottom: 2px solid #b6b6b6;
+    */
+}
+
+.bookinfo {
+    width: 79.3%;
+    height: 70px;
+    float:left;
+    background-color: #808080;
+    color:#161616;
+    padding: 5px;
+    padding-left: 13px;
+    font-size:28px;
+    border-bottom: 2px solid #b6b6b6;
+}
+
+.bookchaptersinfo {
+    /*width: 19.2%;*/
+    height: 70px;
+    float:right;
+    background-color: #808080;
+    color:#161616;
+    padding: 5px;
+    padding-left: 13px;
+    margin-right:10px;
+    font-size:28px;
+    border-bottom: 2px solid #b6b6b6;
+    text-align:center;
+    vertical-align: middle;
 }
 
 .commentsinfo {
     font-size:16px;
-    color:#dedede;
+    color:#4c4c4c;
 }
 
 .booksBlock {
-    width: 20%;
+    width: 344px;
     overflow-x: hidden; 
     overflow-y: auto; 
-    height:80%;
-    margin: 10px 10px 30px;
-    float:inherit;
-}
-
-
-.verse {
+    height:inherit;
+    float:left;
+    border-right: 0px solid #b6b6b6;
     background-color: #808080;
-    color:#b6ff00;
-    padding: 20px;
-    margin:7px;
-    margin-right:20px;
-    font-size:28px;
 }
 
 .chapterBlock {
-    width: 80%;
+    width: 82%;
     overflow-x: hidden; 
     overflow-y: auto; 
-    height:5.03%;
-    margin-left:10px;
-    margin-right:10px;
-    margin-top:50px;
-    margin-bottom:30px;
+    height:inherit;
     float:right;
-    background-color:#C31C1C;
+}
+
+.verse {
+    background-color: #808080;
+    color:#161616;
+    padding: 20px;
+    margin:0px;
+    font-size:28px;
+}
+
+.chapterheader {
+    background-color: #808080;
+    color:#161616;
+    padding: 20px;
+    margin:0px;
+    font-size:38px;
+    text-align:center;
 }

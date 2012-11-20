@@ -16,25 +16,27 @@
     <script src="/js/data.js"></script>
 </head>
 <body>
-    <div id="BooksTemplate" data-win-control="WinJS.Binding.Template" data-win-design-locked="true">
+    <div id="BooksTemplate" data-win-control="WinJS.Binding.Template">
         <div class="book">
-            <div data-win-bind="innerText:FullName">
+            <div class="bookinfo">
+                <div data-win-bind="innerText:FullName">
+                </div>
+                <div class="commentsinfo">
+                    <span data-win-bind="innerText:CommentCount"></span>
+                    <span> comments</span>
+                </div>
             </div>
-            <div>
-                <span data-win-bind="innerText:ChapterCount"> </span>
-                <span> chapters </span>
-            </div>
-            <div class="commentsinfo">
-                <span data-win-bind="innerText:CommentCount"></span>
-                <span> comments</span>
+            <div class="bookchaptersinfo">
+                <div>
+                    &#9660;
+                </div>
             </div>
         </div>
     </div>
     
-    <div id="ChapterTemplate" data-win-control="WinJS.Binding.Template" data-win-design-locked="true">
-        <div class="verse" data-win-design-locked="true">
-            <span data-win-bind="innerText:VerseNumber">
-            </span>
+    <div id="ChapterTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="verse">
+            <span data-win-bind="innerText:VerseNumber"> </span>. 
             <span data-win-bind="innerText:VerseText">
             </span>
             <span data-win-bind="innerText:CommentCount">
@@ -45,8 +47,8 @@
     <div class="maintitle">
         Cloud Study Bible
     </div>
-    <div>
-        <div id="Display" data-win-control="WinJS.UI.ListView" class="booksBlock">
+    <div style="height:90%; background-color:inherit;">
+        <div id="BooksDiv" data-win-control="WinJS.UI.ListView" class="booksBlock">
             Loading...
         </div>
         <div id="ChapterDiv" data-win-control="WinJS.UI.ListView" class="chapterBlock">

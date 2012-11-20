@@ -32,25 +32,42 @@
     };
 
     function renderBooks(books) {
-        while (Display.hasChildNodes()) {
-            Display.removeChild(Display.lastChild);
+        while (BooksDiv.hasChildNodes()) {
+            BooksDiv.removeChild(BooksDiv.lastChild);
         }
         var template = BooksTemplate.winControl;
+        var bFirst = true;
         books.forEach(function (item) {
             template.render(item).then(
             function (element) {
-                element.setAttribute("onclick", "javascript:onBookSelected("+item.BookID+");");
+                element.setAttribute("onclick", "javascript:onBookSelected(" + item.BookID + ");");
+                
                 //element.setAttribute("bookitem", item);
                 //element.setAttribute("bookitem", item);
-                Display.appendChild(element);
+                if (bFirst) {
+                    bFirst = false;
+                    element.style.marginTop = "0px";
+                }
+                element.style.marginBottom = "2px";
+                BooksDiv.appendChild(element);
             });
         });
+        onBookSelected(1);
     }
 
     
     
     app.start();
 })();
+
+// Use this for any popup box (to close it on document click)
+function PreventDefaultAction(e) {
+    e.cancelBubble = true; //IE
+    e.stopPropagation();
+    e.preventDefault();
+    return false;
+} //PreventDefaultAction()
+
 
 function onBookSelected(bookId) {
     var books = gBooks.getBooks();
@@ -67,6 +84,12 @@ function renderChapter(chapter) {
     while (ChapterDiv.hasChildNodes()) {
         ChapterDiv.removeChild(ChapterDiv.lastChild);
     }
+    
+    ChapterHeader = document.createElement("div");
+    ChapterHeader.innerText = chapter.BookName + " " + chapter.ChapterNumber;
+    ChapterHeader.setAttribute("class", "chapterheader");
+    ChapterDiv.appendChild(ChapterHeader);
+    
     var template = ChapterTemplate.winControl;
     chapter.Verses.forEach(function (item) {
         template.render(item).then(
