@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>csbwin8</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- csbwin8 references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/css/books.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+    <script src="/js/data.js"></script>
+</head>
+<body>
+    <div id="BooksTemplate" data-win-control="WinJS.Binding.Template" data-win-design-locked="true">
+        <div class="book">
+            <div data-win-bind="innerText:FullName">
+            </div>
+            <div>
+                <span data-win-bind="innerText:ChapterCount"> </span>
+                <span> chapters </span>
+            </div>
+            <div class="commentsinfo">
+                <span data-win-bind="innerText:CommentCount"></span>
+                <span> comments</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="ChapterTemplate" data-win-control="WinJS.Binding.Template" data-win-design-locked="true">
+        <div class="verse" data-win-design-locked="true">
+            <span data-win-bind="innerText:VerseNumber">
+            </span>
+            <span data-win-bind="innerText:VerseText">
+            </span>
+            <span data-win-bind="innerText:CommentCount">
+            </span>
+        </div>
+    </div>
+    
+    <div class="maintitle">
+        Cloud Study Bible
+    </div>
+    <div>
+        <div id="Display" data-win-control="WinJS.UI.ListView" class="booksBlock">
+            Loading...
+        </div>
+        <div id="ChapterDiv" data-win-control="WinJS.UI.ListView" class="chapterBlock">
+            Select a book/chapter
+        </div>
+    </div>
+</body>
+</html>

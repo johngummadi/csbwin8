@@ -1,0 +1,25 @@
+﻿body {
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}
+
+.maintitle {
+    font-size:60px;
+    color:#4cff00;
+    font-style:inherit;
+    padding:10px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:30px;
+    margin-bottom:30px;
+}
